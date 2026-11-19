@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sac the Queen — Chess Openings, Move by Move</title>
+<meta name="description" content="A visual field guide to 19 trusted chess openings. Step through the moves, read the ideas, and learn the plans behind each position.">
+<meta name="theme-color" content="#f3f1e9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sac the Queen — Chess Openings, Move by Move">
+<meta property="og:description" content="A visual field guide to 19 trusted chess openings. Step through the moves, read the ideas, and learn the plans.">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#openings">Skip to openings</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div>
+      <p class="eyebrow">Opening field guide</p>
+      <h1>Sac the Queen</h1>
+      <p class="lede">Openings are not lines to memorize. They are plans for getting your pieces into a good fight. Step through each board, then read what both sides are really trying to do.</p>
+    </div>
+    <button id="theme" class="theme" type="button" aria-label="Switch color theme">
+      <span class="theme-icon" aria-hidden="true">◐</span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </div>
+</header>
+<main class="wrap">
+  <section class="guide" id="guide" aria-labelledby="guide-title">
+    <div class="section-head">
+      <p class="kicker">Start here</p>
+      <h2 id="guide-title">How to read an opening</h2>
+      <p class="section-lede">Every good opening does three jobs at once. If you remember nothing else, remember these.</p>
+    </div>
+    <div class="principles">
+      <article class="principle">
+        <span class="num">01</span>
+        <h3>Claim the center</h3>
+        <p>Pawns on e4 and d4, or a pawn on c4 backed by Nf3, strike at the middle. From there your pieces reach either wing and change direction quickly.</p>
+      </article>
+      <article class="principle">
+        <span class="num">02</span>
+        <h3>Develop with a purpose</h3>
+        <p>Bring out knights and bishops to squares where they do something. A move that both develops and threatens is usually worth more than a cautious retreat.</p>
+      </article>
+      <article class="principle">
+        <span class="num">03</span>
+        <h3>Get the king safe</h3>
+        <p>Castling tucks the king away and connects the rooks. Until that happens, the center is a dangerous place for your king to linger.</p>
+      </article>
+    </div>
+    <div class="guide-grid">
+      <article class="explainer">
+        <h3>The board is a timeline</h3>
+        <p>Use <b>«</b> and <b>»</b> to jump to the start or the full line, <b>‹</b> and <b>›</b> for one step at a time, or tap any move in the list. Each step is one <em>ply</em>: a single move by one player.</p>
+        <ul class="legend">
+          <li><span class="swatch yellow" aria-hidden="true"></span><span><b>Yellow squares</b> show where the last piece came from and where it landed.</span></li>
+          <li><span class="swatch orange" aria-hidden="true"></span><span><b>Orange arrows</b> mark the square the position is arguing about, not a move you must play.</span></li>
+          <li><span class="swatch notation" aria-hidden="true">Nf3</span><span><b>Move text</b> is algebraic notation: <code>Nf3</code> means knight to f3, <code>O-O</code> means castle short.</span></li>
+        </ul>
+      </article>
+      <article class="explainer">
+        <h3>Ideas beat memorization</h3>
+        <p>The <b>Idea</b> line explains the tension in plain language. The <b>Plans</b> line gives the typical follow-up for both colors. Neither is a promise: your opponent gets a vote, and a changed pawn structure can change the whole plan.</p>
+        <p>A <b>pawn break</b> such as ...c5 or d4 is a move that challenges the center. When you see one, ask what happens if it is captured, ignored, or pushed past. That question is most of opening strategy.</p>
+        <p class="hint"><b>New here?</b> Start with the Italian Game, Queen's Gambit Declined, or London System. They teach the same lessons with fewer forcing lines.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="openings" id="openings" aria-labelledby="openings-title">
+    <div class="section-head">
+      <p class="kicker">The collection</p>
+      <h2 id="openings-title">Openings, move by move</h2>
+      <p class="section-lede">Nineteen lines that have been tested by strong players for decades. Filter by first move or search for a name, a pawn structure, or a plan.</p>
+    </div>
+    <div class="toolbar">
+      <label class="search">
+        <span class="sr-only">Search openings</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="search" type="search" placeholder="Search openings or ideas" autocomplete="off">
+      </label>
+      <div class="filters" role="group" aria-label="Filter by first move">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-f="e4" aria-pressed="false">1.e4</button>
+        <button class="chip" type="button" data-f="d4" aria-pressed="false">1.d4</button>
+        <button class="chip" type="button" data-f="c4" aria-pressed="false">1.c4</button>
+        <button class="chip" type="button" data-f="Nf3" aria-pressed="false">1.Nf3</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="ar" checked><span>Idea arrows</span></label>
+    </div>
+    <p id="count" class="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <p id="empty" class="empty" hidden>No openings match that search. Try a shorter word, or choose <b>All</b> above.</p>
+    <p class="note"><b>About this list:</b> these openings are widely played and have stood up to years of high-level practice. “Successful” depends on rating, time control, and database, so no win rates are quoted here. For exact numbers, check a current database such as the Lichess Opening Explorer. Theory keeps moving, and your own results matter more than anyone else's.</p>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap"><span>Sac the Queen</span><span>A small guide to better first moves.</span></div>
+</footer>
+</body>
+</html>
